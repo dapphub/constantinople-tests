@@ -95,4 +95,6 @@ contract ConstantinopleTestsTest is DSTest {
         assertEq(DeadCode(a).dummy(), 0xdeadbeef);
     }
     // TODO: test some SELFDESTRUCT properties of CREATE2
+    // TODO: test EXTCODEHASH on self-destructed contract
+    // TODO: test EXTCODEHASH on precompiled contracts
 }
