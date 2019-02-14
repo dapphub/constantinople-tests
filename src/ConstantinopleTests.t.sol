@@ -5,7 +5,7 @@ import "ds-test/test.sol";
 import "./ConstantinopleTests.sol";
 
 contract DeadCode{
-    function dummy() external returns (uint32);
+    function dummy() external returns (uint256);
 }
 
 contract ConstantinopleTestsTest is DSTest {
@@ -124,7 +124,7 @@ contract ConstantinopleTestsTest is DSTest {
           a := create2(0, top, 25, salt)
         }
 
-        assertEq(uint256(DeadCode(a).dummy()), 0xdeadbeef);
+        assertEq(DeadCode(a).dummy(), 0xdeadbeef);
     }
     // TODO: test some SELFDESTRUCT properties of CREATE2
     // TODO: test EXTCODEHASH on self-destructed contract
