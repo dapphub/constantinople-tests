@@ -109,7 +109,7 @@ contract ConstantinopleTestsTest is DSTest {
           mstore8(top, 0xff)            
           mstore(add(top, 21), salt)
           mstore(add(top, 53), inithash)
-          expected_a := xor(keccak256(top, 85), 0x0000000000000000000000001111111111111111111111111111111111111111)
+          expected_a := and(keccak256(top, 85), 0x000000000000000000000000ffffffffffffffffffffffffffffffffffffffff)
         }
 
         assertEq(a, expected_a);
